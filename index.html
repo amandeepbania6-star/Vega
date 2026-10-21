@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Little Surprise ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Falling hearts -->
+    <div id="hearts"></div>
+
+
+    <!-- ================= PAGE 1 ================= -->
+
+    <section class="page active" id="page1">
+
+        <div class="content">
+
+            <div class="main-heart">❤️</div>
+
+            <p class="small-title">A little something...</p>
+
+            <h1>
+                I have made a
+                <br>
+                <span>surprise</span>
+                for you.
+            </h1>
+
+            <p id="typewriter" class="typewriter"></p>
+
+            <div class="buttons">
+
+                <button id="yesBtn" onclick="nextPage(2)">
+                    Yes ❤️
+                </button>
+
+                <button id="noBtn">
+                    No 😭
+                </button>
+
+            </div>
+
+            <p class="hint">
+                Choose carefully... 👀
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= PAGE 2 ================= -->
+
+    <section class="page" id="page2">
+
+        <div class="content">
+
+            <div class="small-heart">💗</div>
+
+            <p class="small-title">
+                Just for you
+            </p>
+
+            <h1>
+                There's a little
+                <br>
+                surprise waiting...
+            </h1>
+
+            <p class="subtitle">
+                Open it when you're ready ❤️
+            </p>
+
+
+            <!-- ENVELOPE -->
+
+            <div class="envelope-wrapper">
+
+                <div class="envelope" id="envelope">
+
+                    <div class="envelope-back"></div>
+
+                    <div class="letter">
+                        <span>For You ❤️</span>
+                    </div>
+
+                    <div class="envelope-front"></div>
+
+                    <div class="flap"></div>
+
+                </div>
+
+            </div>
+
+
+            <button class="surprise-btn" onclick="openEnvelope()">
+                💌 Open this surprise
+            </button>
+
+
+            <!-- MESSAGE -->
+
+            <div class="letter-message" id="letterMessage">
+
+                <div class="message-heart">
+                    💗
+                </div>
+
+                <h2>
+                    You are really special.
+                </h2>
+
+                <p>
+                    I just wanted to remind you that
+                    your presence makes things a little
+                    brighter.
+                </p>
+
+                <p>
+                    Thank you for the laughs,
+                    the memories and all those
+                    little moments that somehow
+                    become unforgettable.
+                </p>
+
+
+                <!-- WISH CARDS -->
+
+                <div class="wishes">
+
+                    <div class="wish-card">
+                        <div>🌸</div>
+                        <h3>Happiness</h3>
+                        <p>
+                            May you always have
+                            countless reasons to smile.
+                        </p>
+                    </div>
+
+
+                    <div class="wish-card">
+                        <div>✨</div>
+                        <h3>Dreams</h3>
+                        <p>
+                            May all the things you
+                            dream about find their way to you.
+                        </p>
+                    </div>
+
+
+                    <div class="wish-card">
+                        <div>💖</div>
+                        <h3>Memories</h3>
+                        <p>
+                            May this year give you
+                            moments worth remembering forever.
+                        </p>
+                    </div>
+
+
+                    <div class="wish-card">
+                        <div>🌹</div>
+                        <h3>You</h3>
+                        <p>
+                            And most importantly,
+                            never stop being the amazing
+                            person you are.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <button class="next-btn" onclick="nextPage(3)">
+                    One last thing... ❤️
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= PAGE 3 ================= -->
+
+    <section class="page" id="page3">
+
+        <div class="content final">
+
+            <div class="final-heart">
+                ❤️
+            </div>
+
+            <p class="small-title">
+                And finally...
+            </p>
+
+            <h1>
+                Happy Birthday, Manash!
+            </h1>
+
+            <div class="divider">
+                ♥ ♥ ♥
+            </div>
+
+            <p>
+                Thanks for making me feel special
+                in your own little ways.
+            </p>
+
+            <p>
+                I hope your day is filled with
+                happiness, laughter and beautiful
+                moments.
+            </p>
+
+            <div class="final-box">
+
+                <span>Enjoy your day! 💗</span>
+
+                <br><br>
+
+                Once again...
+
+                <br><br>
+
+                <strong>
+                    HAPPY BIRTHDAY ❤️
+                </strong>
+
+            </div>
+
+            <div class="signature">
+                With lots of love ♡
+            </div>
+
+            <div class="sparkle-text">
+                ✨ You deserve a beautiful year ahead ✨
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

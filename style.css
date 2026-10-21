@@ -1,0 +1,943 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #ff8fab,
+            #ff477e 45%,
+            #c9184a 100%
+        );
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   FALLING HEARTS
+========================= */
+
+#hearts {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 20;
+}
+
+
+.falling-heart {
+    position: fixed;
+
+    top: -40px;
+
+    pointer-events: none;
+
+    animation:
+        heartFall linear forwards;
+
+    opacity: 0.8;
+
+    filter:
+        drop-shadow(
+            0 0 5px rgba(255,255,255,0.4)
+        );
+}
+
+
+@keyframes heartFall {
+
+    0% {
+        transform:
+            translateY(-50px)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.9;
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.page {
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px 18px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.page.active {
+    display: flex;
+
+    animation:
+        pageIn 0.8s ease;
+}
+
+
+@keyframes pageIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.96)
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    text-align: center;
+
+    padding: 20px 10px;
+}
+
+
+.main-heart {
+
+    font-size: 70px;
+
+    margin-bottom: 15px;
+
+    animation:
+        heartbeat 1.5s infinite;
+}
+
+
+.small-heart {
+
+    font-size: 50px;
+
+    margin-bottom: 10px;
+
+    animation:
+        heartbeat 1.5s infinite;
+}
+
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.small-title {
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    opacity: 0.85;
+
+    margin-bottom: 15px;
+}
+
+
+h1 {
+
+    font-size: 35px;
+
+    line-height: 1.25;
+
+    font-weight: 600;
+
+    margin-bottom: 18px;
+
+    text-shadow:
+        0 3px 12px rgba(100,0,30,0.2);
+}
+
+
+h1 span {
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size: 55px;
+}
+
+
+.typewriter {
+
+    min-height: 30px;
+
+    font-size: 17px;
+
+    font-weight: 300;
+
+    margin-bottom: 30px;
+}
+
+
+.subtitle {
+
+    font-size: 14px;
+
+    opacity: 0.9;
+
+    margin-bottom: 25px;
+}
+
+
+.hint {
+
+    margin-top: 20px;
+
+    font-size: 12px;
+
+    opacity: 0.75;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+
+button {
+
+    border: none;
+
+    font-family:
+        'Poppins',
+        sans-serif;
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color:
+        transparent;
+}
+
+
+#yesBtn,
+#noBtn {
+
+    padding:
+        13px 28px;
+
+    border-radius: 50px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+#yesBtn {
+
+    color: #d41445;
+
+    background: white;
+
+    box-shadow:
+        0 8px 25px
+        rgba(80,0,20,0.2);
+}
+
+
+#yesBtn:active {
+
+    transform:
+        scale(0.94);
+}
+
+
+#noBtn {
+
+    color: white;
+
+    background:
+        rgba(255,255,255,0.18);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.5);
+
+    position: relative;
+
+    z-index: 50;
+}
+
+
+/* =========================
+   ENVELOPE
+========================= */
+
+.envelope-wrapper {
+
+    height: 220px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: 15px 0 5px;
+}
+
+
+.envelope {
+
+    width: 250px;
+
+    height: 165px;
+
+    position: relative;
+
+    perspective: 900px;
+
+    filter:
+        drop-shadow(
+            0 15px 25px
+            rgba(80,0,30,0.25)
+        );
+}
+
+
+.envelope-back {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        #ffccd5;
+
+    border-radius:
+        8px;
+
+    z-index: 1;
+}
+
+
+.envelope-front {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 75%;
+
+    background:
+        #ff8fab;
+
+    clip-path:
+        polygon(
+            0 0,
+            50% 55%,
+            100% 0,
+            100% 100%,
+            0 100%
+        );
+
+    z-index: 4;
+
+    border-radius:
+        0 0 8px 8px;
+}
+
+
+.flap {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background:
+        #ff6f91;
+
+    clip-path:
+        polygon(
+            0 0,
+            50% 55%,
+            100% 0
+        );
+
+    transform-origin:
+        top center;
+
+    transition:
+        transform 0.8s ease;
+
+    z-index: 5;
+}
+
+
+.letter {
+
+    position: absolute;
+
+    width: 85%;
+
+    height: 125px;
+
+    background: white;
+
+    color: #c9184a;
+
+    left: 7.5%;
+
+    bottom: 10px;
+
+    border-radius: 5px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size: 28px;
+
+    box-shadow:
+        0 5px 15px
+        rgba(100,0,30,0.15);
+
+    transition:
+        transform 0.9s ease;
+
+    z-index: 2;
+}
+
+
+.envelope.open .flap {
+
+    transform:
+        rotateX(180deg);
+
+}
+
+
+.envelope.open .letter {
+
+    transform:
+        translateY(-85px);
+
+    z-index: 6;
+}
+
+
+/* =========================
+   SURPRISE BUTTON
+========================= */
+
+.surprise-btn {
+
+    padding:
+        13px 24px;
+
+    border-radius: 50px;
+
+    color: #c9184a;
+
+    background: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 8px 25px
+        rgba(70,0,20,0.2);
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.surprise-btn:active {
+
+    transform:
+        scale(0.94);
+}
+
+
+/* =========================
+   LETTER MESSAGE
+========================= */
+
+.letter-message {
+
+    max-height: 0;
+
+    opacity: 0;
+
+    overflow: hidden;
+
+    transform:
+        translateY(30px);
+
+    transition:
+        max-height 1s ease,
+        opacity 0.7s ease,
+        transform 0.7s ease;
+
+    margin-top: 20px;
+}
+
+
+.letter-message.show {
+
+    max-height: 1300px;
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    overflow: visible;
+}
+
+
+.message-heart {
+
+    font-size: 35px;
+
+    margin: 10px;
+}
+
+
+.letter-message h2 {
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size: 40px;
+
+    font-weight: 400;
+
+    margin-bottom: 15px;
+}
+
+
+.letter-message > p {
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    margin-bottom: 12px;
+
+    padding:
+        0 8px;
+}
+
+
+/* =========================
+   WISH CARDS
+========================= */
+
+.wishes {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 12px;
+
+    margin:
+        25px 0;
+}
+
+
+.wish-card {
+
+    background:
+        rgba(255,255,255,0.18);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.3);
+
+    backdrop-filter:
+        blur(10px);
+
+    border-radius:
+        18px;
+
+    padding:
+        18px 10px;
+
+    opacity: 0;
+
+    transform:
+        translateY(25px);
+
+    animation:
+        cardAppear 0.6s forwards;
+}
+
+
+.wish-card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+
+.wish-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+
+.wish-card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+
+.wish-card:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+
+@keyframes cardAppear {
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+.wish-card div {
+
+    font-size: 28px;
+
+    margin-bottom: 5px;
+}
+
+
+.wish-card h3 {
+
+    font-size: 15px;
+
+    margin-bottom: 7px;
+}
+
+
+.wish-card p {
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   NEXT BUTTON
+========================= */
+
+.next-btn {
+
+    margin-top: 15px;
+
+    padding:
+        13px 22px;
+
+    border-radius: 50px;
+
+    color: white;
+
+    background:
+        rgba(255,255,255,0.2);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.5);
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    box-shadow:
+        0 5px 20px
+        rgba(80,0,20,0.15);
+}
+
+
+/* =========================
+   FINAL PAGE
+========================= */
+
+.final-heart {
+
+    font-size: 90px;
+
+    margin-bottom: 15px;
+
+    animation:
+        finalHeart 1.8s infinite;
+}
+
+
+@keyframes finalHeart {
+
+    0%,
+    100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.15);
+    }
+
+}
+
+
+.final h1 {
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size: 65px;
+
+    font-weight: 400;
+}
+
+
+.divider {
+
+    font-size: 13px;
+
+    letter-spacing: 7px;
+
+    margin:
+        15px 0 25px;
+
+    opacity: 0.8;
+}
+
+
+.final > p {
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    margin-bottom: 12px;
+}
+
+
+.final-box {
+
+    margin:
+        30px 0;
+
+    padding:
+        22px 15px;
+
+    border-radius:
+        20px;
+
+    background:
+        rgba(255,255,255,0.17);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.3);
+
+    backdrop-filter:
+        blur(10px);
+
+    line-height: 1.7;
+
+    box-shadow:
+        0 10px 35px
+        rgba(80,0,20,0.15);
+}
+
+
+.final-box strong {
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size: 40px;
+
+    font-weight: 400;
+}
+
+
+.signature {
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size: 28px;
+
+    margin-top: 25px;
+}
+
+
+.sparkle-text {
+
+    font-size: 11px;
+
+    margin-top: 25px;
+
+    opacity: 0.75;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 380px) {
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h1 span {
+        font-size: 48px;
+    }
+
+    .envelope {
+        width: 225px;
+    }
+
+    .wishes {
+        gap: 8px;
+    }
+
+    .wish-card {
+        padding: 15px 8px;
+    }
+
+    .final h1 {
+        font-size: 55px;
+    }
+
+}
